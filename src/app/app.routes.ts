@@ -15,7 +15,15 @@ export const routes: Routes = [
       import('./pages/pipes/pipes.page').then((c) => c.PipesPage),
   },
   {
+    path: 'angular-uses',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./pages/angular-uses/angular-uses.routes').then(
+        ({ routes }) => routes
+      ),
+  },
+  {
     path: '**',
-    redirectTo: 'pipes',
+    redirectTo: 'angular-uses',
   },
 ];
