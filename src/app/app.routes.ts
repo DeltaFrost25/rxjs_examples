@@ -16,7 +16,6 @@ export const routes: Routes = [
   },
   {
     path: 'angular-uses',
-    pathMatch: 'full',
     loadChildren: () =>
       import('./pages/angular-uses/angular-uses.routes').then(
         ({ routes }) => routes

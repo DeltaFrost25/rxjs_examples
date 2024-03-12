@@ -26,56 +26,54 @@ import { TableModule } from 'primeng/table';
     TableModule,
   ],
   template: `
-    <div class="flex justify-center">
-      <form
-        [formGroup]="profileForm"
-        class="w-1/2 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      >
-        <div class="mb-4">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="firstName"
-          >
-            First Name
-          </label>
-          <input
-            id="firstName"
-            type="text"
-            pInputText
-            formControlName="firstName"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div class="mb-6">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="lastName"
-          >
-            Last Name
-          </label>
-          <input
-            id="lastName"
-            type="text"
-            pInputText
-            formControlName="lastName"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            pButton
-            type="submit"
-            label="Submit"
-            [disabled]="!isFormValid"
-            (click)="submit()"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          ></button>
-          @if(emitedValue) {
-          <span class="w-1/2"> Emited value: {{ emitedValue | json }} </span>
-          }
-        </div>
-      </form>
-    </div>
+    <form
+      [formGroup]="profileForm"
+      class="mt-4 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="firstName"
+        >
+          First Name
+        </label>
+        <input
+          id="firstName"
+          type="text"
+          pInputText
+          formControlName="firstName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="lastName"
+        >
+          Last Name
+        </label>
+        <input
+          id="lastName"
+          type="text"
+          pInputText
+          formControlName="lastName"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          pButton
+          type="submit"
+          label="Submit"
+          [disabled]="!isFormValid"
+          (click)="submit()"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        ></button>
+        @if(emitedValue) {
+        <span class="w-1/2"> Emited value: {{ emitedValue | json }} </span>
+        }
+      </div>
+    </form>
     <div class="flex justify-center mt-4">
       <p-table [value]="[formData]" class="w-1/2">
         <ng-template pTemplate="header">

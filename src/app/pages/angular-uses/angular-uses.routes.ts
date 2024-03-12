@@ -15,7 +15,6 @@ export const routes: Routes = [
       },
       {
         path: 'reactive-forms',
-        pathMatch: 'full',
         loadComponent: () =>
           import('./pages/reactive-forms/reactive-forms.page').then(
             (c) => c.ReactiveFormsPage
